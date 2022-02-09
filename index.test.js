@@ -1,19 +1,18 @@
 
-const {
-  mapExample,
-  nameFinder,
-  nameFilter
-} = require('./index');
+import { mapExample, nameFilter, nameFinder, reducerFromArrayToInt, reducerFromArrayToObject } from './index';
+
 
 describe('js intro', () => {
   const names = [{
-      firstName: 'Mike',
-      lastName: 'Sernandez'
-    },
-    {
-      firstName: 'Todd',
-      lastName: 'Bonzalez'
-    }
+    firstName: 'Mike',
+    lastName: 'Sernandez',
+    age: 44
+  },
+  {
+    firstName: 'Todd',
+    lastName: 'Bonzalez',
+    age: 40
+  }
   ];
 
   describe('mapExample', () => {
@@ -29,7 +28,8 @@ describe('js intro', () => {
       const actual = nameFilter(names, 'Mike');
       expect(actual).toEqual([{
         firstName: 'Mike',
-        lastName: 'Sernandez'
+        lastName: 'Sernandez',
+        age: 44,
       }])
     })
   })
@@ -39,8 +39,23 @@ describe('js intro', () => {
       const actual = nameFinder(names, 'Mike');
       expect(actual).toEqual({
         firstName: 'Mike',
-        lastName: 'Sernandez'
+        lastName: 'Sernandez',
+        age: 44,
       })
     })
   })
+
+  describe('reducerFromArrayToInt', () => {
+    it('works', () => {
+      const actual = reducerFromArrayToInt(names);
+      expect(actual).toEqual(84)
+    });
+  });
+
+  describe('reducerFromArrayToObject', () => {
+    it('works', () => {
+      const actual = reducerFromArrayToObject(names);
+      expect(actual).toEqual({ total: 84 })
+    });
+  });
 })

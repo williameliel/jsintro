@@ -1,19 +1,15 @@
-const mapExample = (names) => {
-  return names.map((person,)=>{
-    return `${person.firstName} ${person.lastName}`
-  })
+export const mapExample = (names) => {
 }
 
-const nameFilter = (names, nameToFilter) => {
-  return names.filter(({firstName}) => {
-    return firstName === nameToFilter
-  })
+export const nameFilter = (names, nameToFilter) => {
 }
 
-const nameFinder = (names, nameToFind) => {
-  return names.find((p)=> p.firstName === nameToFind)
+export const nameFinder = (names, nameToFind) => {
 }
 
-exports.mapExample = mapExample;
-exports.nameFinder = nameFinder;
-exports.nameFilter = nameFilter;
+export const reducerFromArrayToInt = (values) => {
+}
+
+export const reducerFromArrayToObject = (values) => {
+}
+  
